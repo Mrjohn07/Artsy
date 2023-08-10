@@ -1,0 +1,545 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6)), url("../img/BI.png");
+  padding: 30px;
+  opacity: 1;
+  
+}
+.container{
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 2700px;
+  z-index: 1;
+}
+.container .cover{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+.container #flip:checked ~ .cover{
+  transform: rotateY(-180deg);
+}
+ .container .cover .front,
+ .container .cover .back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.cover .back{
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover::before,
+.container .cover::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #074807;
+  opacity: 0.5;
+  z-index: 12;
+}
+.container .cover::after{
+  opacity: 0.3;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.container .cover img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+.container .cover .text{
+  position: absolute;
+  z-index: 130;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cover .text .text-1,
+.cover .text .text-2{
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.cover .text .text-2{
+  font-size: 15px;
+  font-weight: 500;
+}
+.container .forms{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.container .form-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-content .login-form,
+.form-content .signup-form{
+  width: calc(100% / 2 - 25px);
+}
+.forms .form-content .title{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Audiowide", sans-serif;
+  color: #333;
+}
+.forms .form-content .title:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #15ce15;
+}
+.forms .signup-form  .title:before{
+  width: 20px;
+}
+.forms .form-content .input-boxes{
+  margin-top: 30px;
+}
+.forms .form-content .input-box{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.form-content .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+  border-color: #15ce15;
+}
+.form-content .input-box i{
+  position: absolute;
+  color: #15ce15;
+  font-size: 17px;
+}
+.forms .form-content .text{
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.forms .form-content .text a{
+  text-decoration: none;
+}
+.forms .form-content .text a:hover{
+  text-decoration: underline;
+}
+.forms .form-content .button{
+  color: #fff;
+  margin-top: 40px;
+}
+.forms .form-content .button input{
+  color: #fff;
+  background: #033803;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.forms .form-content .button input:hover{
+  background: #15ce15;
+}
+.forms .form-content label{
+  color: #15ce15;
+  cursor: pointer;
+}
+.forms .form-content label:hover{
+  text-decoration: underline;
+}
+.forms .form-content .login-text,
+.forms .form-content .sign-up-text{
+  text-align: center;
+  margin-top: 25px;
+}
+.container #flip{
+  display: none;
+}
+@media (max-width: 730px) {
+  .container .cover{
+    display: none;
+  }
+  .form-content .login-form,
+  .form-content .signup-form{
+    width: 100%;
+  }
+  .form-content .signup-form{
+    display: none;
+  }
+  .container #flip:checked ~ .forms .signup-form{
+    display: block;
+  }
+  .container #flip:checked ~ .forms .login-form{
+    display: none;
+  }
+}
+/***login & signup form end*****/
+nav{
+  top:0;
+  left: 0;
+  display: flex;
+  position: fixed;
+  height: 10%;
+  width: 100%;
+  background-color: rgb(45,47,59)transparent;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  font-family: "Audiowide", sans-serif;
+  transition: backgroung-color 0.3s;
+  z-index: 999;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+  text-shadow: 0 0 5px #195e24,
+   0 0 25px #47c95b,
+   0 0 50px #26cd47, 
+   0 0 75px #35cf54,
+   0 0 100px #42d576;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+  text-transform: uppercase;
+}
+nav ul li a
+{
+  width: 100%;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: rgb(45,47,59);
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #fff;
+  border-top-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+  
+}
+
+.sy{
+  color: #15ce15;
+}
+nav ul li a:hover{
+  color: #15ce15; 
+  text-shadow: 0 0 5px #195e24,
+  0 0 5px #47c95b,
+  0 0 30px #26cd47, 
+  0 0 55px #35cf54,
+  0 0 750px #42d576;
+}
+
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+@media (max-width: 1000px){
+  nav{
+    position: fixed;
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {   
+  nav{
+    position: fixed;
+    background-color: rgb(45,47,59) transparent;
+    z-index: 99;
+  } 
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 66px;
+    left: -100%;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+  cursor: pointer;
+  background-color: rgb(45,47,59) transparent;
+  
+  
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    letter-spacing: 1px;
+  cursor: pointer;
+  background-color: rgb(45,47,59);
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #fff;
+  border-top-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+  
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a{
+    transition:all 0.3s ease;
+  }
+  nav ul li a:hover{
+    border-color: #000000;
+    background: none;
+    color: #15ce15; 
+    text-shadow: 0 0 5px #32a044,
+  0 0 25px #165f21,
+  0 0 50px #2f9944, 
+  0 0 75px #378146,
+  0 0 100px #57bb7a;
+  }
+}
+
+/***** nav bar end*****/
+/******contact*****/
+
+.container3 {
+  height: 80%;
+  width: 100%;
+  max-width: 70%;
+  padding:5px 20px;
+  box-sizing: border-box;
+  background-color:  rgb(233, 229, 229);
+  margin: 8em 10px 5px 10px;
+}
+
+.form1 {
+  margin-top: 1em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.error-field {
+  border-color: #f00;
+}
+
+.exclamation-mark {
+  position: absolute;
+  color: #f00;
+  align-items: end;
+  font-size: 1.5em;
+}
+.form-group {
+  margin-bottom: 20px;
+  border-color: #000000;
+}
+#contactform{
+  margin-left: -10px;
+}
+.container3 .form1 .r-side {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  position: relative;
+}
+
+.form1 .r-side::before {
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #195e24;
+}
+
+.form1 .r-side .personal-info {
+  margin: 14px;
+  text-align: center;
+}
+
+.form1 .r-side .personal-info i {
+  font-size: 30px;
+  color: #195e24;
+  margin-bottom: 10px;
+}
+
+.form .r-side .personal-info .topic {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form .r-side .personal-info .text-one,
+.form .r-side .personal-info .text-two {
+  font-size: 14px;
+  color: #195e24;
+}
+.container3 .form1 .l-side {
+  width: 75%;
+  margin-left: 75px;
+}
+
+.form1 .l-side h2 {
+  font-size: 23px;
+  font-weight: 600;
+  color: #222629;
+  font-family: audiowide;
+}
+
+.l-side .form-group {
+  height: 50px;
+  width: 100%;
+  margin: 12px 0;
+  flex-basis: 50%;
+  box-sizing: border-box;
+}
+.l-side .form-group input,
+.l-side .form-group textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #F0F1F8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.l-side .form-group #country {
+width: 72%;
+height: 100%;
+border: none;
+margin-left: 3%;
+  outline: none;
+  font-size: 16px;
+  background: #F0F1F8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.l-side .form-group #phone {
+width: 97%;
+}
+.l-side .m-box {
+  min-height: 110px;
+}
+
+.l-side .form-group textarea {
+  padding-top: 6px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+button {
+  background-color: transparent;
+  color: rgb(109, 106, 106);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #15ce15;
+  color: #f2f2f2;
+}
+
+.line{
+  border: 1px solid #2f2e2e;
+  border-radius: 50%;
+  padding: 0px 10px;
+  margin-bottom: 3%;
+}
+@media (max-width: 768px) {
+  .form1 {
+    flex-direction: column;
+    width: 100%;
+    
+  }
+
+  .r-side {
+    width: 100%;
+    margin-left: 40%;
+  }
+}

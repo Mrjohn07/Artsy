@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } 
+  body{
+    background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6)), url("../img/art.png");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+  nav{
+    top:0;
+    left: 0;
+    display: flex;
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    background-color: rgb(45,47,59)transparent;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    font-family: "Audiowide", sans-serif;
+    transition: backgroung-color 0.3s;
+    z-index: 999;
+  }
+  nav .logo{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+    text-shadow: 0 0 5px #195e24,
+     0 0 25px #47c95b,
+     0 0 50px #26cd47, 
+     0 0 75px #35cf54,
+     0 0 100px #42d576;
+  }
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  nav ul li{
+    margin: 0 5px;
+    text-transform: uppercase;
+  }
+  nav ul li a
+  {
+    width: 100%;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: rgb(45,47,59);
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #fff;
+    border-top-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    
+  }
+  
+  .sy{
+    color: #15ce15;
+  }
+  nav ul li a:hover{
+    color: #15ce15; 
+    text-shadow: 0 0 5px #195e24,
+    0 0 5px #47c95b,
+    0 0 30px #26cd47, 
+    0 0 55px #35cf54,
+    0 0 750px #42d576;
+  }
+  
+  nav .menu-btn i{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  
+  @media (max-width: 1000px){
+    nav{
+      position: fixed;
+      padding: 0 40px 0 50px;
+    }
+  }
+  @media (max-width: 920px) {   
+    nav{
+      position: fixed;
+      background-color: rgb(45,47,59) transparent;
+      z-index: 99;
+    } 
+    nav .menu-btn i{
+      display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+      content: "\f00d";
+    }
+    nav ul{
+      position: fixed;
+      top: 66px;
+      left: -100%;
+      height: auto;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+    cursor: pointer;
+    background-color: rgb(45,47,59) transparent;
+    
+    
+    }
+    #click:checked ~ ul{
+      left: 0;
+    }
+    nav ul li{
+      width: 100%;
+      margin: 40px 0;
+    }
+    nav ul li a{
+      width: 100%;
+      margin-left: -100%;
+      display: block;
+      font-size: 20px;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      letter-spacing: 1px;
+    cursor: pointer;
+    background-color: rgb(45,47,59);
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #fff;
+    border-top-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    
+    }
+    #click:checked ~ ul li a{
+      margin-left: 0px;
+    }
+    nav ul li a{
+      transition:all 0.3s ease;
+    }
+    nav ul li a:hover{
+      border-color: #000000;
+      background: none;
+      color: #15ce15; 
+      text-shadow: 0 0 5px #32a044,
+    0 0 25px #165f21,
+    0 0 50px #2f9944, 
+    0 0 75px #378146,
+    0 0 100px #57bb7a;
+    }
+  }
+  
+  /**** nav bar end****/
+/**** image gallery***/
+.h2{
+    margin-top: 3em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 42px;
+    color: #d6d2d2;
+  }
+  
+
+     hr{
+      margin: 2em 7em;
+   }
+
+  /******footer******/
+.footer{
+  text-align: center;
+  font-size: 12px;
+  line-height: 22px;
+  font-family: 'oswald', sans-serif;
+  padding: 15px 0px 0px 0px;
+  color: #b8b5b5;
+  margin-bottom: 0.5em;
+  }
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 18px;
+  }
+  
+a{
+  font-size: 18px;
+}
+.contact-link{
+  position: relative;
+  width: auto;
+  margin: 0px 16.5%;
+  
+  }
+.me1{
+  color: rgb(197, 197, 197);
+  transition: color 0.3s ease-in-out;
+  }
+.me1:hover{
+  color: #25c347;
+  }
+  .e-pay{
+    margin:0 20.5%;
+  }
+.e-pay img{
+  height: 35px;
+  width: 35px;
+}
+.p-c{
+  display: flex;
+  column-gap: 8%;
+  margin-bottom: 5px;
+}
+

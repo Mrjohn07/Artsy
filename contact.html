@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTSY ~ Contact</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="css/login.css">
+    
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                ART<span class="sy">SY</span>
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="login.html">Sign-in</a></li>
+                      
+            </ul>
+        </nav>
+    </header>
+            <!----contact form---->
+            <div class="container3">
+                <div class="form1">
+                  <div class="l-side">
+                  <h2>Contact Me</h2>
+                  <form id="contactForm" onsubmit="return validateForm()">
+                    <div class="form-group">
+                      <input type="text" id="name" name="name" placeholder="Full name">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <select id="country" name="country" onchange="updateCountryCode(), highlightField(fieldId),resetFieldHighlight(fieldId)">
+                          <option value="">Select a country</option>
+                          <option value="US">United States (+1)</option>
+                          <option value="CA">Canada (+1)</option>
+                          <option value="UK">United Kingdom (+44)</option>
+                          <option value="NP">Nepal (+977)</option>
+                          <option value="IN">India (+91)</option>
+                          <option value="JP">Japan (+81)</option>
+                          <option value="KR">Korea (+82)</option>
+                          <option value="PT">Portugal (+351)</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <input id="phone" name="phone" placeholder="0000000000">
+                      </div>
+                    </div>
+              
+                    <div class="form-group">
+                      <input id="email" name="email" placeholder="@gmail.com">
+                    </div>
+              
+                    <div class="form-group m-box">
+                      <textarea id="message" name="message" placeholder="leave you'r message"></textarea>
+                    </div>
+              
+                    <div class="form-group">
+                      <button type="submit">Submit</button>
+                      <button type="button" onclick="resetForm()">Reset</button>
+                    </div>
+                  </div>
+                    <div class="r-side">
+                      <div class="personal-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="topic">Address</div>
+                        <div class="text-one">33700</div>
+                        <div class="text-two">Lakeside Road, Pokhara</div>
+                      </div>
+                      <div class="personal-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="topic">Phone</div>
+                        <div class="text-one">+977 9825000550</div>
+                      </div>
+                      <div class="personal-info">
+                        <i class="fas fa-envelope"></i>
+                        <div class="topic">Email</div>
+                        <div class="text-one">nitsadhikati@gmail.com</div>
+                      </div>
+                    </div>
+                    
+                  </form>
+              
+                 
+                </div>
+                <div class="line"></div>
+      
+                 <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.0401274811898!2d83.95683793445718!3d28.210944120282925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995951e42f44729%3A0xb63c82e52d92abcb!2sLakeside%20Rd%2C%20Pokhara%2033700%2C%20Nepal!5e0!3m2!1sen!2suk!4v1688905242364!5m2!1sen!2suk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+              </div>
+              
+    <script src="js/main.js"></script>
+</body>
+
+</html>
